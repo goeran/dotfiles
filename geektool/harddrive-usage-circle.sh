@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# special font: http://www.macosxtips.co.uk/geeklets/system/system-info-circular-graphics/
+
 DISK=`df -H -l|grep G|awk '{print "X"int($5/2)"X"}' | sed 's/\%//' | head -n 1`
 
 # For debugging purposes

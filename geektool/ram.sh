@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# special font: http://www.macosxtips.co.uk/geeklets/system/system-info-circular-graphics/
+
 FREE_BLOCKS=$(vm_stat | grep free | awk '{ print $3 }' | sed 's/\.//')
 INACTIVE_BLOCKS=$(vm_stat | grep inactive | awk '{ print $3 }' | sed 's/\.//')
 SPECULATIVE_BLOCKS=$(vm_stat | grep speculative | awk '{ print $3 }' | sed 's/\.//')
