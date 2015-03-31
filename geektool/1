@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FREE_BLOCKS=$(vm_stat | grep free | awk '{ print $3 }' | sed 's/\.//')
+INACTIVE_BLOCKS=$(vm_stat | grep inactive | awk '{ print $3 }' | sed 's/\.//')
+SPECULATIVE_BLOCKS=$(vm_stat | grep speculative | awk '{ print $3 }' | sed 's/\.//')
+FREE=$((($FREE_BLOCKS+SPECULATIVE_BLOCKS)*4096/1048576))
+FREE_PERCENTAGE=$(bc -l <<< '(((1024*16)-'$FREE')/(1024*16)*100)')
+FREE_PERCENTAGE_CIRCLE='X'$(printf "%0.0f" $(bc -l <<< "$FREE_PERCENTAGE/2"))'X'
+
+echo $FREE_PERCENTAGE_CIRCLE
+echo $(printf "%0.0f" $FREE_PERCENTAGE)%
+
