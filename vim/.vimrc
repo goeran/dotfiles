@@ -1,3 +1,5 @@
+syntax on
+
 " git commit message
 
-au FileType gitcommit set tw=72 | set spell | set colorcolumn=50
+au FileType gitcommit set tw=72 | set spell | set colorcolumn=72
