@@ -2,6 +2,19 @@
 
 set -eu
 
+# install 1password
+sudo apt-get install -qq \
+    unzip \
+    --no-install-recommends \
+
+if ! [ -x "$(command -v op)" ]; then
+    export OP_VERSION="v1.2.0"
+    curl -sS -o 1password.zip https://cache.agilebits.com/dist/1P/o
+p/pkg/${OP_VERSION}/op_linux_386_${OP_VERSION}.zip
+    unzip 1password.zip -d /usr/local/bin
+    rm -f 1password.zip
+fi
+
 echo "Login with 1Password"
 eval $(op signin my.1password.com)
 
