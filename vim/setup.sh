@@ -1,8 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-vimrcPath=~/.vimrc
+echo "Setup Vim"
 
-mv $keyBindingsPath $vimrcPath.bak
-
-ln -s $(pwd)/.vimrc $vimrcPath
+# symlink
+ln -sfn $(pwd)/vim/.vimrc "${HOME}"/.vimrc
 
