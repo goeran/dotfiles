@@ -3,7 +3,6 @@ packadd! dracula
 set number
 
 syntax enable
-set background=dark
 colorscheme dracula
 
 set encoding=utf-8

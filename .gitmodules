@@ -1,0 +1,6 @@
+[submodule "vim/pack/plugins/start/vim-go"]
+	path = vim/pack/plugins/start/vim-go
+	url = git@github.com:fatih/vim-go
+[submodule "vim/pack/themes/start/dracula"]
+	path = vim/pack/themes/start/dracula
+	url = git@github.com:dracula/vim
