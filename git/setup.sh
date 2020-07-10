@@ -11,8 +11,9 @@ read -p "Git author name: " git_author_name
 read -p "Git author e-mail: " git_author_email
 
 echo "Git author will be configured with:
-    - name: $git_author_name
-    - e-mail $git_author_email"
+    - user.name: '$git_author_name'
+    - user.email '$git_author_email'
+    - core.editor: 'vim'"
 
 #echo "Do you wish to continue?"
 while true; do
@@ -22,7 +23,7 @@ while true; do
             echo "yes"; 
             git config --global user.name $git_author_name;
             git config --global user.email $git_author_email;
-            git config --global editor "vim";
+            git config --global core.editor 'vim';
             echo -e "\xEE\x90\x9F G✅it sucessfully configured ";
             break;;
         [Nn]* ) echo -e "\xEE\x90\xA1 Git was not configured "; break;;
