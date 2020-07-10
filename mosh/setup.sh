@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! [ -x "$(command -v mosh)" ]; then
     echo "Install mosh"
