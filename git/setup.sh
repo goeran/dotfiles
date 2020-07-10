@@ -2,10 +2,10 @@
 
 if ! [ -x "$(command -v git)" ]; then
     echo "Git is not installed. Not able to setup"
-    exit 0
+    exit 1
 fi
 
-echo "Setup gitconfig\n"
+echo "Setup Git"
 
 read -p "Git author name: " git_author_name
 read -p "Git author e-mail: " git_author_email
