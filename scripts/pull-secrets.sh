@@ -10,9 +10,8 @@ sudo apt-get install -qq \
 if ! [ -x "$(command -v op)" ]; then
     echo "Download and install 1password CLI"
     export OP_VERSION="v1.2.0"
-    curl -sS -o 1password.zip https://cache.agilebits.com/dist/1P/o
-p/pkg/${OP_VERSION}/op_linux_386_${OP_VERSION}.zip
-    unzip 1password.zip -d /usr/local/bin
+    curl -sS -o 1password.zip https://cache.agilebits.com/dist/1P/op/pkg/${OP_VERSION}/op_linux_386_${OP_VERSION}.zip
+    sudo unzip 1password.zip -d /usr/local/bin
     rm -f 1password.zip
 fi
 
