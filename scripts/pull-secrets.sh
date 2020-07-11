@@ -17,7 +17,7 @@ fi
 
 echo "Login with 1Password"
 read -p "1Password e-mail: " op_email
-eval $(op signin my.1password.com $op_mail)
+eval $(op signin my.1password.com $op_email)
 
 echo "Downloading secrets"
 op get document PrivateKey > id_rsa_github
