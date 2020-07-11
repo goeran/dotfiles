@@ -16,7 +16,8 @@ if ! [ -x "$(command -v op)" ]; then
 fi
 
 echo "Login with 1Password"
-eval $(op signin my.1password.com)
+read -p "1Password e-mail: " op_email
+eval $(op signin my.1password.com $op_mail)
 
 echo "Downloading secrets"
 op get document PrivateKey > id_rsa_github
