@@ -15,6 +15,7 @@ echo "Completed running installers"
 # Run setups
 echo "About to run setup scripts"
 ./git/setup.sh
+./zsh/setup.sh
 ./vim/setup.sh
 echo "Completed running setup scripts"
 
