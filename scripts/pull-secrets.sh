@@ -19,8 +19,10 @@ echo "Login with 1Password"
 read -p "1Password e-mail: " op_email
 eval $(op signin my.1password.com $op_email)
 
+read -p "1Password vault: " op_vault
+
 echo "Downloading secrets"
-op get document PrivateKey > id_rsa_github
+op get document github-private-key --vault $op_vault > id_rsa_github
 
 rm -f ~/.ssh/id_rsa_github
 ln -sfn $(pwd)/id_rsa_github ~/.ssh/id_rsa_github
